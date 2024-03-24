@@ -12,7 +12,7 @@ module.exports = {
   mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Output Management",
+      title: "Weather App",
     }),
   ],
   module: {
