@@ -28,17 +28,6 @@ export async function logAPIinfo(city) {
   const data = await response.json();
   data.current.condition.icon =
     "https://" + _.trim(data.current.condition.icon, "/");
-  console.log(
-    data.location.name +
-      ", " +
-      data.location.country +
-      ", " +
-      data.current.temp_c +
-      "°C, " +
-      data.current.condition.text +
-      ", " +
-      data.current.condition.icon
-  );
   return data;
 }
 

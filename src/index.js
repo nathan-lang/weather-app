@@ -19,5 +19,16 @@ button.addEventListener("click", async function () {
     return;
   }
   const oldWeatherInfo = document.querySelector(".weather");
-  document.body.replaceChild(displayAPIinfo(data), oldWeatherInfo);
+  oldWeatherInfo.style.transition = "0.5s";
+  oldWeatherInfo.style.opacity = 0;
+  setTimeout(function () {
+    setTimeout(function () {
+      const newWeatherInfo = document.querySelector(".weather");
+      newWeatherInfo.style.opacity = 1;
+    }, 500);
+    const newWeatherInfo = displayAPIinfo(data);
+    newWeatherInfo.style.opacity = 0;
+    newWeatherInfo.style.transition = "opacity 0.5s ease-out";
+    document.body.replaceChild(newWeatherInfo, oldWeatherInfo);
+  }, 500);
 });
